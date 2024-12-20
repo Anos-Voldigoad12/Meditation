@@ -14,6 +14,8 @@ startBtn.addEventListener("click", () => {
   if (timerInterval === null) {
     minutesInput.disabled = true;
     secondsInput.disabled = true;
+    minutesInput = document.getElementById("minutesInput");
+    secondsInput = document.getElementById("secondsInput");
     audio.play();
     timerInterval = setInterval(() => {
       if (totalSeconds > 0) {
