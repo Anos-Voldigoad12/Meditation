@@ -1,5 +1,5 @@
-const minutesInput = document.getElementById("minutesInput");
-const secondsInput = document.getElementById("secondsInput");
+let minutesInput = document.getElementById("minutesInput");
+let secondsInput = document.getElementById("secondsInput");
 const startBtn = document.getElementById("startBtn");
 const stopBtn = document.getElementById("stopBtn");
 const resetBtn = document.getElementById("resetBtn");
@@ -16,6 +16,7 @@ startBtn.addEventListener("click", () => {
     secondsInput.disabled = true;
     minutesInput = document.getElementById("minutesInput");
     secondsInput = document.getElementById("secondsInput");
+    totalSeconds = getInputSeconds();
     audio.play();
     timerInterval = setInterval(() => {
       if (totalSeconds > 0) {
@@ -38,7 +39,6 @@ function stopTimer() {
     timerInterval = null;
     audio.pause();
     audio.currentTime = 0;
-    timerInterval = null;
     minutesInput.disabled = false;
     secondsInput.disabled = false;
   }
